@@ -9,11 +9,15 @@ export default async function ProductsPage() {
     headers: {
       "Content-Type": "application/json",
     },
-    body: JSON.stringify(args), // Send the form data as JSON
+    body: JSON.stringify(args),
   });
+
+  
   const data = await response.json();
   console.log(data);
-
+  if(!data.success){
+      throw new Error("An error occurred while processing the request.");
+  }
   return (
     <section className="container mx-auto p-8">
       <table className="table">
