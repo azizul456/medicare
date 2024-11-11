@@ -1,11 +1,13 @@
 import { configureStore } from '@reduxjs/toolkit'
 import toggleReducer from './features/sidebar/toggleSlice'
+import formReducer from './features/form/formSlice'
 import React from 'react'
 
 export const makeStore = () => {
   return configureStore({
     reducer: {
       toggle: toggleReducer,
+      form: formReducer
     },
   })
 }

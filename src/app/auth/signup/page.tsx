@@ -1,3 +1,4 @@
+"use client";
 import React from "react";
 import Link from "next/link";
 import Image from "next/image";
@@ -6,13 +7,29 @@ import Breadcrumb from "@/components/Breadcrumbs/Breadcrumb";
 import { Metadata } from "next";
 import DefaultLayout from "@/components/Layouts/DefaultLayout";
 
-export const metadata: Metadata = {
-  title: "Next.js SignUp Page | TailAdmin - Next.js Dashboard Template",
-  description: "This is Next.js SignUp Page TailAdmin Dashboard Template",
-  // other metadata
-};
+import { useAppDispatch, useAppSelector } from "@/lib/hooks/hooks";
+import { updateFormData, resetForm } from "@/lib/features/form/formSlice";
+
+// export const metadata: Metadata = {
+//   title: "Next.js SignUp Page | TailAdmin - Next.js Dashboard Template",
+//   description: "This is Next.js SignUp Page TailAdmin Dashboard Template",
+//   // other metadata
+// };
 
 const SignUp: React.FC = () => {
+
+  const dispatch = useAppDispatch();
+  const formData = useAppSelector((state) => state.form);
+
+  const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
+    const { name, value } = e.target;
+    dispatch(updateFormData({ [name]: value }));
+  };
+
+  const handleReset = () => {
+    dispatch(resetForm());
+  };
+
   return (
     <DefaultLayout>
       <Breadcrumb pageName="Sign Up" />
@@ -181,9 +198,12 @@ const SignUp: React.FC = () => {
                   </label>
                   <div className="relative">
                     <input
+                      name="name"
+                      value={formData.name}
                       type="text"
                       placeholder="Enter your full name"
                       className="w-full rounded-lg border border-stroke bg-transparent py-4 pl-6 pr-10 text-black outline-none focus:border-primary focus-visible:shadow-none dark:border-form-strokedark dark:bg-form-input dark:text-white dark:focus:border-primary"
+                      onChange={handleChange}
                     />
 
                     <span className="absolute right-4 top-4">
@@ -216,9 +236,12 @@ const SignUp: React.FC = () => {
                   </label>
                   <div className="relative">
                     <input
+                      name="email"
+                      value={formData.email}
                       type="email"
                       placeholder="Enter your email"
                       className="w-full rounded-lg border border-stroke bg-transparent py-4 pl-6 pr-10 text-black outline-none focus:border-primary focus-visible:shadow-none dark:border-form-strokedark dark:bg-form-input dark:text-white dark:focus:border-primary"
+                      onChange={handleChange}
                     />
 
                     <span className="absolute right-4 top-4">
@@ -250,6 +273,7 @@ const SignUp: React.FC = () => {
                       type="password"
                       placeholder="Enter your password"
                       className="w-full rounded-lg border border-stroke bg-transparent py-4 pl-6 pr-10 text-black outline-none focus:border-primary focus-visible:shadow-none dark:border-form-strokedark dark:bg-form-input dark:text-white dark:focus:border-primary"
+                      onChange={handleChange}
                     />
 
                     <span className="absolute right-4 top-4">
@@ -285,6 +309,7 @@ const SignUp: React.FC = () => {
                       type="password"
                       placeholder="Re-enter your password"
                       className="w-full rounded-lg border border-stroke bg-transparent py-4 pl-6 pr-10 text-black outline-none focus:border-primary focus-visible:shadow-none dark:border-form-strokedark dark:bg-form-input dark:text-white dark:focus:border-primary"
+                      onChange={handleChange}
                     />
 
                     <span className="absolute right-4 top-4">
@@ -316,6 +341,7 @@ const SignUp: React.FC = () => {
                     type="submit"
                     value="Create account"
                     className="w-full cursor-pointer rounded-lg border border-primary bg-primary p-4 text-white transition hover:bg-opacity-90"
+                    onChange={handleChange}
                   />
                 </div>
 
@@ -363,6 +389,7 @@ const SignUp: React.FC = () => {
                       Sign in
                     </Link>
                   </p>
+                  <button type="button" onClick={handleReset}>Reset</button>
                 </div>
               </form>
             </div>
