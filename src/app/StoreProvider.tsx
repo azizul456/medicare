@@ -18,7 +18,7 @@ export default function StoreProvider({ children }: { children: React.ReactNode 
       const formData = JSON.parse(formDataLocalStorage);
       storeRef.current?.dispatch(updateFormData(formData));
     }
-  });
+  },[]);
 
   return <Provider store={storeRef.current}>{children}</Provider>;
 }

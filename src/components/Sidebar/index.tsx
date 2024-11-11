@@ -330,6 +330,7 @@ const menuGroups = [
 const Sidebar = ({ sidebarOpen, setSidebarOpen }: SidebarProps) => {
   const dispatch = useAppDispatch(); // Inside a component
   const isActive = useAppSelector((state) => state.toggle.isActive);
+  
   const toggleSidebar = () => {
     dispatch(setTrue());
   };
