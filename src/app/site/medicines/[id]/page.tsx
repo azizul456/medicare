@@ -2,6 +2,7 @@ import { Metadata } from 'next';
 import React from 'react'
 import Image from 'next/image';
 import Card from '@/components/ui/card';
+import AccordionItem from "@/components/Accordion/AccordionItem";
 export const metadata: Metadata = {
     title: "Medicine",
     description: "Medicine",
@@ -36,7 +37,7 @@ const DetailsPage = async ({ params }: DetailsPageProps) => {
                         <div className="bg-white p-6 rounded-lg shadow-md">
                             <h1>{data.name} ({data.generic_name})</h1>
 
-                            
+
                             <Image
                                 src={data.dosage_image}
                                 alt={`${data.name} image`}
@@ -71,45 +72,27 @@ const DetailsPage = async ({ params }: DetailsPageProps) => {
 
                         {/* Conditional Rendering for nullable fields */}
                         {data.description && (
-                            <div className="bg-white shadow-md">
-                                <h2 className="bg-gray-800 text-white p-2 pl-6 pr-6">Description</h2>
-                                <div className="p-6" dangerouslySetInnerHTML={{ __html: data.description }} />
-                            </div>
+                            <AccordionItem title={'Description'} content={data.description} defaultOpen={true}></AccordionItem>
                         )}
 
                         {/* Conditional Use */}
                         {data.conditional_use && (
-                            <div className="bg-white shadow-md">
-                                <h2 className="bg-gray-800 text-white p-2 pl-6 pr-6">Conditional Use</h2>
-                                <div className="p-6" dangerouslySetInnerHTML={{ __html: data.conditional_use }} />
-                            </div>
+                            <AccordionItem title={'Indication and Usage'} content={data.conditional_use}></AccordionItem>
                         )}
 
                         {/* Side Effects */}
                         {data.side_effect && (
-
-                            <div className="bg-white shadow-md">
-                                <h2 className="bg-gray-800 text-white p-2 pl-6 pr-6">Side Effects</h2>
-                                <div className="p-6" dangerouslySetInnerHTML={{ __html: data.side_effect }} />
-                            </div>
+                            <AccordionItem title={'Side Effect'} content={data.side_effect}></AccordionItem>
                         )}
 
                         {/* Dosage and Administration */}
                         {data.dosage_and_admin && (
-
-                            <div className="bg-white shadow-md">
-                                <h2 className="bg-gray-800 text-white p-2 pl-6 pr-6">Dosage and Administration</h2>
-                                <div className="p-6" dangerouslySetInnerHTML={{ __html: data.dosage_and_admin }} />
-                            </div>
+                            <AccordionItem title={'Dosage & Administration (How to take this medication)'} content={data.dosage_and_admin}></AccordionItem>
                         )}
 
                         {/* Precautions */}
                         {data.precaution && (
-
-                            <div className="bg-white shadow-md">
-                                <h2 className="bg-gray-800 text-white p-2 pl-6 pr-6">Precautions</h2>
-                                <div className="p-6" dangerouslySetInnerHTML={{ __html: data.precaution }} />
-                            </div>
+                            <AccordionItem title={'Precaution/Good to know'} content={data.precaution}></AccordionItem>
                         )}
 
                         {/* Display Diseases */}
