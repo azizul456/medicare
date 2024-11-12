@@ -32,12 +32,12 @@ export default function Header() {
                     </Link>
                     <nav className="space-x-4">
                         <Link href='/'>Home</Link>
-                        <Link href="/about">About</Link>
-                        <Link href="/doctors">Doctors</Link>
-                        <Link href="/site/medicines ">Medicines</Link>
-                        <Link href="/hospitals ">hospitals</Link>
-                        <Link href="/Blog">Blogs</Link>
-                        <Link href="/contact">Contact</Link>
+                        <Link href="/pages/about">About</Link>
+                        <Link href="/pages/doctors">Doctors</Link>
+                        <Link href="/pages/medicines ">Medicines</Link>
+                        <Link href="/pages/hospitals ">hospitals</Link>
+                        <Link href="/pages/Blog">Blogs</Link>
+                        <Link href="/pages/contact">Contact</Link>
                     </nav>
                 </div>
             </header>

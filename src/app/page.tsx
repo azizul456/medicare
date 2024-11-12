@@ -1,5 +1,5 @@
 import Image from "next/image";
-import SiteLayout from "./site/layout";
+import SiteLayout from "./pages/layout";
 export default function Home() {
   return (
     <SiteLayout>

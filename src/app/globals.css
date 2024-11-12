@@ -25,3 +25,151 @@ body {
   text-align: center;
   width: 100px;
 }
+
+.doctors_grid .d-container {
+  width: 100%;
+  float: left;
+  position: relative;
+  box-shadow: 10px 34px 65px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+}
+
+.doctors_grid .d-container:hover {
+  width: 100%;
+  float: left;
+  position: relative;
+  box-shadow: 10px 34px 65px rgba(0, 0, 0, 0.2);
+}
+
+.doctors_grid .d-head {
+  width: 100%;
+  float: left;
+  position: relative;
+  background: #016C42;
+  color: #fff;
+  padding: 10px 10px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-content: space-between;
+}
+
+.doctors_grid .d-body {
+  width: 100%;
+  float: left;
+  position: relative;
+  padding: 10px 10px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-content: space-between;
+}
+
+.doctors_grid .d-foot {
+  width: 100%;
+  float: left;
+  position: relative;
+  background: #fcfcfc;
+  color: #000;
+  padding: 10px 10px;
+  border-top: 1px solid #ddd;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-content: space-between;
+}
+
+.doctors_grid .d-body .left-section {
+  display: flex;
+  flex-direction: column;
+  padding: 10px 0px;
+  width: calc(100% - 100px);
+}
+
+.doctors_grid .d-body .right-section {
+  display: flex;
+  flex-direction: column;
+  padding: 10px 0px;
+  justify-content: center;
+  align-content: center;
+  width: 100px;
+}
+
+.doctors_grid .d-body .available_dates {
+  padding: 0 10px;
+  width: 100%;
+  gap: 10px;
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.doctors_grid .d-head .chambers-link {
+  background: #182041;
+  border-radius: 17.5px;
+  border-color: #182041;
+
+  font-family: Roboto;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 12px;
+  line-height: 18px;
+  color: #ffffff;
+  opacity: 1;
+}
+
+.doctors_grid .btn-appointment {
+  font-family: Roboto;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 1;
+  color: #fff !important;
+  background: #016C42;
+  border: 2px solid #016C42;
+  box-sizing: border-box;
+  border-radius: 25px;
+  padding: 8px 20px;
+  margin-top: 5px;
+  margin-bottom: 5px;
+}
+
+.doctors_grid .btn-view_profile {
+  font-family: Roboto;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 1;
+  color: #fff !important;
+  background: #016C42;
+  border: 2px solid #016C42;
+  box-sizing: border-box;
+  border-radius: 25px;
+  padding: 8px 20px;
+}
+
+.doctors_grid .closest_available_date {
+  font-family: Roboto;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 1;
+  color: #182041 !important;
+  background: transparent;
+  border: 2px solid #182041;
+  box-sizing: border-box;
+  border-radius: 25px;
+  padding: 8px 20px;
+  width: auto;
+  display: inline-block;
+}
+
+.doctors_grid .closest_available_date p {
+  font-family: Roboto;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 1;
+  color: #182041 !important;
+  margin: 0;
+  padding: 0;
+}
