@@ -67,7 +67,6 @@ body {
 
 .doctors_grid .d-foot {
   width: 100%;
-  float: left;
   position: relative;
   background: #fcfcfc;
   color: #000;
@@ -75,7 +74,7 @@ body {
   border-top: 1px solid #ddd;
   display: flex;
   flex-wrap: wrap;
-  justify-content: space-between;
+  justify-content: center;
   align-content: space-between;
 }
 
@@ -101,6 +100,7 @@ body {
   gap: 10px;
   display: flex;
   flex-wrap: wrap;
+  justify-content: center;
 }
 
 .doctors_grid .d-head .chambers-link {
